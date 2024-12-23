@@ -10,7 +10,7 @@ const app = express();
 // })
 
 app.get('/', (req, res) => {
-    res.send('This is Home Page');
+    res.send('Ini adalah halaman home');
 });
 
 app.get('/about', (req, res) => {
