@@ -25,6 +25,12 @@ app.post('/product', (req, res) => {
     res.send('This is Product Page from POST');
 });
 
+app.get('/blog/:penulis/:tema/:judul', (req, res) => {
+    const {penulis, tema, judul} = req.params;
+
+    res.send(`Halaman ini dibuat oleh ${penulis} dengan tema ${tema} dan judul ${judul}`);
+});
+
 app.get('*', (req, res) => {
     res.send('404 Page Not Found');
 })
