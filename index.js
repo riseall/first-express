@@ -31,6 +31,15 @@ app.get('/blog/:penulis/:tema/:judul', (req, res) => {
     res.send(`Halaman ini dibuat oleh ${penulis} dengan tema ${tema} dan judul ${judul}`);
 });
 
+app.get('/search', (req, res) => {
+    const {q} = req.query;
+    if(!q) {
+        res.send('No Search Result');
+    } else {
+        res.send(`Search Result for ${q}`);
+    }
+})
+
 app.get('*', (req, res) => {
     res.send('404 Page Not Found');
 })
